@@ -1,0 +1,8 @@
+Build a browser-based cyberpunk endless runner in HTML, CSS, and JavaScript. Use CSS
+perspective to create a 3D skyline background with two parallax layers. The player
+character jumps when I press Space, with gravity returning them to the ground. Double
+jump allowed mid-air.
+
+The Structural Block obstacle is colliding with the
+player too early - shrink the collision bounding box slightly so it matches the visible shape
+more accurately.

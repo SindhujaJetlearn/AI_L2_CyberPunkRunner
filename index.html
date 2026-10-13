@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberpunkRunner – Endless 3D Runner</title>
+  <meta name="description" content="A neon-drenched cyberpunk endless runner with 3D parallax skyline, double-jump, and stylish obstacles." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="gameWrapper">
+
+  <!-- ====== 3D Skyline Scene ====== -->
+  <div id="skyScene">
+    <div id="sky"></div>
+    <div id="stars"></div>
+    <div id="moon"></div>
+    <!-- Far parallax layer (slow, deep buildings) -->
+    <div id="layerFar"  class="sky-layer"></div>
+    <!-- Near parallax layer (faster, closer buildings) -->
+    <div id="layerNear" class="sky-layer"></div>
+  </div>
+
+  <!-- ====== Ground plane ====== -->
+  <div id="groundPlane"></div>
+
+  <!-- ====== Game Area ====== -->
+  <div id="gameArea">
+    <div id="player">
+      <div class="p-leg-l"></div>
+      <div class="p-leg-r"></div>
+      <div class="p-body"></div>
+      <div class="p-head"></div>
+    </div>
+  </div>
+
+  <!-- ====== HUD ====== -->
+  <div id="hud">
+    <div class="hud-panel">
+      <div class="hud-label">Score</div>
+      <div class="hud-value" id="scoreDisplay">00000</div>
+    </div>
+    <div class="hud-panel">
+      <div class="hud-label">Best</div>
+      <div class="hud-value" id="bestDisplay">00000</div>
+    </div>
+    <div class="hud-panel">
+      <div class="hud-label">Speed</div>
+      <div class="hud-value" id="speedDisplay">1.0x</div>
+    </div>
+  </div>
+
+  <!-- Jump pip indicator (shows remaining jumps) -->
+  <div id="jumpIndicator">
+    <div class="jump-pip" id="pip1"></div>
+    <div class="jump-pip" id="pip2"></div>
+  </div>
+
+  <!-- CRT scanlines overlay -->
+  <div id="scanlines"></div>
+
+  <!-- Speed-up flash -->
+  <div id="speedFlash"></div>
+
+  <!-- ====== Start Screen ====== -->
+  <div id="startScreen" class="screen">
+    <h1>CYBERPUNK<br>RUNNER</h1>
+    <p class="subtitle">// NEON DISTRICT &nbsp;// SECTOR 7 //</p>
+    <button class="btn" id="startBtn">INITIALIZE</button>
+    <p class="controls-hint">
+      SPACE / &uarr; &mdash; JUMP &nbsp;|&nbsp; DOUBLE-JUMP MID-AIR<br>
+      TAP SCREEN ON MOBILE
+    </p>
+  </div>
+
+  <!-- ====== Game-Over Screen ====== -->
+  <div id="gameOverScreen" class="screen hidden">
+    <h1>SYSTEM<br>FAILURE</h1>
+    <p id="goScore">SCORE: 00000</p>
+    <p id="goHigh">BEST: 00000</p>
+    <button class="btn" id="restartBtn">REBOOT</button>
+    <p class="controls-hint">SPACE / &uarr; &mdash; RESTART</p>
+  </div>
+
+</div><!-- end #gameWrapper -->
+
+<!-- Game Engine -->
+<script src="game.js"></script>
+</body>
+</html>
