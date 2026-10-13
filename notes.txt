@@ -6,3 +6,8 @@ jump allowed mid-air.
 The Structural Block obstacle is colliding with the
 player too early - shrink the collision bounding box slightly so it matches the visible shape
 more accurately.
+
+In Github, Settings ->Pages -> Branch -> Main
+Then go to Actions on top => after built, you will get the link
+
+https://sindhujajetlearn.github.io/AI_L2_CyberPunkRunner/
